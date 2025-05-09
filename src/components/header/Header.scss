@@ -1,0 +1,365 @@
+.main-header {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1000;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; // Increased padding
+  }
+  
+  .top-banner {
+    background-color: #bb0628; 
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    
+    p {
+      margin: 0;
+    }
+  }
+  
+  .header-main {
+    display: flex;
+    align-items: center;
+    padding: 20px 0; // Increased padding
+    background-color: white;
+    
+    .logo-container {
+      flex: 0 0 auto;
+      margin-right: 40px; // Increased margin
+      
+      .fast-buy-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        
+        .logo-icon {
+          width: 40px;
+          height: 40px;
+          background: linear-gradient(135deg, #0046be 0%, #0033a0 100%);
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 8px;
+          font-weight: 800;
+          font-size: 16px;
+          margin-right: 12px;
+          box-shadow: 0 2px 8px rgba(0, 70, 190, 0.3);
+        }
+        
+        .logo-text {
+          font-size: 24px;
+          font-weight: 800;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: #0046be;
+          
+          .logo-highlight {
+            color: #bb0628;
+            position: relative;
+            
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: -3px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background: #0046be;
+              border-radius: 1px;
+            }
+          }
+        }
+        
+        &:hover {
+          .logo-icon {
+            transform: rotate(5deg);
+          }
+          
+          .logo-text {
+            .logo-highlight {
+              &:after {
+                background: #bb0628;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .search-container {
+      flex: 1;
+      position: relative;
+      max-width: 450px;
+      margin: 0 25px; // Added margin on both sides
+      
+      input {
+        width: 100%;
+        padding: 12px 45px 12px 15px;
+        border: 2px solid #eee;
+        border-radius: 8px;
+        font-size: 14px;
+        background-color: #f8f9fa;
+        transition: all 0.2s ease;
+        
+        &:focus {
+          outline: none;
+          border-color: #0046be;
+          background-color: white;
+          box-shadow: 0 2px 8px rgba(0, 70, 190, 0.1);
+        }
+      }
+      
+      .search-btn {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #0046be;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background: darken(#0046be, 10%);
+          box-shadow: 0 2px 5px rgba(0, 70, 190, 0.3);
+        }
+      }
+    }
+    
+    .header-actions {
+      display: flex;
+      gap: 30px; // Increased gap between elements
+      margin-left: 30px;
+      
+      .account-menu {
+        position: relative;
+        
+        &:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background: white;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          min-width: 180px;
+          border-radius: 8px;
+          z-index: 100;
+          padding: 10px 0;
+          margin-top: 12px; // Increased margin
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(10px);
+          transition: all 0.2s ease;
+          
+          a, button {
+            display: block;
+            padding: 12px 20px; // Increased padding
+            color: #333;
+            text-decoration: none;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            
+            &:hover {
+              background: #f5f8ff;
+              color: #0046be;
+            }
+          }
+        }
+      }
+      
+      .action-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #333;
+        text-decoration: none;
+        background: none;
+        border: none;
+        padding: 5px 10px; // Added padding
+        cursor: pointer;
+        position: relative;
+        
+        i {
+          font-size: 22px; // Increased icon size
+          margin-bottom: 6px; // Increased margin
+          transition: all 0.2s ease;
+        }
+        
+        span {
+          font-size: 13px; // Increased font size
+          font-weight: 500;
+        }
+        
+        &:hover {
+          color: #0046be;
+          
+          i {
+            transform: translateY(-2px);
+          }
+        }
+        
+        &.active {
+          color: #0046be;
+        }
+        
+        .cart-count {
+          position: absolute;
+          top: -8px;
+          right: -5px;
+          background: #bb0628;
+          color: white;
+          font-size: 12px;
+          min-width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+          box-shadow: 0 2px 5px rgba(187, 6, 40, 0.3);
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+  
+  .main-nav {
+    background: linear-gradient(to right, #0046be, #0057e7);
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 70, 190, 0.2);
+    
+    .container {
+      padding: 0 20px; // Added padding
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      
+      li {
+        position: relative;
+        
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 15px;
+          padding: 18px 25px; // Increased padding
+          display: block;
+          transition: all 0.2s ease;
+          font-weight: 500;
+          letter-spacing: 0.3px;
+          
+          &:hover {
+            background: rgba(255,255,255,0.15);
+          }
+          
+          &.active {
+            background: rgba(255,255,255,0.2);
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-header {
+    .main-nav .nav-links li a {
+      padding: 18px 20px; // Adjusted padding for smaller screens
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .main-header {
+    .header-main {
+      flex-wrap: wrap;
+      
+      .logo-container {
+        margin-right: 20px;
+      }
+      
+      .search-container {
+        order: 3;
+        width: 100%;
+        margin: 15px 0 0 0;
+        max-width: 100%;
+      }
+      
+      .header-actions {
+        margin-left: auto;
+        gap: 20px; // Reduced gap for medium screens
+      }
+    }
+    
+    .main-nav .nav-links {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      
+      li a {
+        padding: 15px 18px; // Reduced padding for medium screens
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .main-header {
+    .header-main {
+      padding: 15px 0;
+      
+      .logo-container {
+        .fast-buy-logo {
+          .logo-text {
+            display: none;
+          }
+          
+          .logo-icon {
+            margin-right: 0;
+          }
+        }
+      }
+      
+      .header-actions {
+        gap: 15px; // Further reduced gap for small screens
+        
+        .action-btn span {
+          font-size: 11px;
+        }
+      }
+    }
+    
+    .main-nav .nav-links li a {
+      padding: 12px 15px;
+      font-size: 13px;
+    }
+  }
+}
